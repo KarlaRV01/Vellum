@@ -1,7 +1,7 @@
 <body>
   <link rel="stylesheet" type="text/css" href="styles.css">
 
-    <div class="md-toolbar-tools">
+    <!-- <div class="md-toolbar-tools">
       <h2><span>Login Form</span></h2>
     </div>
   </md-toolbar>
@@ -28,7 +28,61 @@
         <input type="button" value="Login"
         onclick=""/>
       </form>
-      <!-- <md-button ng-disabled="!Form.$valid" ng-click="vm.submit()" class="md-raised md-primary">&nbsp Login &nbsp</md-button> -->
-    </form>
-
+    </form> -->
 </body>
+
+
+<style>
+  div.transbox {
+  margin: 100px;
+  background-color: #ffffff;
+  color: #ae3737;
+  border: 1px solid black;
+  /*opacity: 0.6;*/
+  filter: alpha(opacity=60);
+  }
+
+  div.transbox p {
+    margin: 3%;
+    font-weight: bold;
+  }
+  </style>
+  </head>
+  <body>
+
+  <div class="background">
+    <div class="transbox">
+      <p>
+        <h1 class="w3-jumbo ">Log In</h1>
+        <hr class="w3-border-grey" style="margin:auto;width:40%">
+        <p class="w3-large w3-center">  <div class="md-toolbar-tools">
+          </div>
+        </md-toolbar>
+        <md-card-content>
+          <form name="Form">
+            <md-input-container class="md-block">
+              <div ng-messages="Form.email.$error" role="alert" multiple="">
+                <div ng-message="required" class="my-message">Please enter your email below:</div>
+              </div>
+              <label>Login<span style="color:red;">*</span></label>
+              <input type="text" name="email" ng-model="vm.formData.email" placeholder="email" required=""/>
+            </md-input-container>
+            <md-input-container class="md-block">
+              <div ng-messages="Form.password.$error" role="alert" multiple="">
+                <div ng-message="required" class="my-message">Please enter your password below:</div>
+              </div>
+              <label>Password<span style="color:red;">*</span></label>
+              <input type="password" name="password" ng-model="vm.formData.password" placeholder="password" required="" md-maxlength="16"/>
+            </md-input-container>
+            <div class="form-group">
+              <span class="text-muted"><em><span style="color:red;">*</span> Indicates required field</em></span><br>
+            </div>
+            <form>
+              <input type="button" value="Login"
+              onclick=""/>
+            </form>
+          </form></p>
+        <div class="w3-display-middle">
+    </div>
+  </div>
+</style>
