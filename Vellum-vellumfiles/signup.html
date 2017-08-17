@@ -1,12 +1,6 @@
-<head>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="websitejs.js"></script>
-</head>
-<body>
 <link rel="stylesheet" type="text/css" href="styles.css">
 
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-xs-6">
     <form>
@@ -26,9 +20,7 @@
   <div class="form-group">
     <label for="exampleInputPassword">Password<span style="color:red;">*</span></label>
     <input type="text" class="form-control" id="exampleInputPassword" placeholder="Enter password">
-    <button id="btnSubmit" onclick="checkPassword()">Check this password</button>
-    <p id="results"> </p> <!-- changed ID to class bc class is more general & there can only be one ID-->
-  <div class="form-group">
+    <div class="form-group">
       <label for="exampleInputPasswordAgain">Re-enter Password<span style="color:red;">*</span></label>
       <input type="text" class="form-control" id="exampleInputPasswordAgain" placeholder="Re-enter password"><br>
   <div class="form-group">
@@ -39,5 +31,63 @@
     </div>
     </div>
   </div>
-</div>
-</body>
+</div> -->
+
+<style>
+  div.transbox {
+  margin: 100px;
+  background-color: #ffffff;
+  color: #ae3737;
+  border: 1px solid black;
+  /*opacity: 0.6;*/
+  filter: alpha(opacity=90);
+  }
+
+  div.transbox p {
+    margin: 3%;
+    font-weight: bold;
+    font-size: 900%;
+  }
+  </style>
+  </head>
+  <body>
+
+  <div class="background">
+    <div class="transbox">
+      <p>
+        <h1 class="w3-jumbo ">Sign Up</h1>
+        <hr class="w3-border-grey" style="margin:auto;width:40%">
+        <p class="w3-large w3-center"><div class="container">
+          <div class="row">
+            <div class="col-xs-6">
+            <form>
+              <!-- <h4>Sign Up</h4> -->
+          <div class="form-group">
+            <label for="exampleInputFirst">First name<span style="color:red;">*</span></label>
+            <input type="text" class="form-control" id="exampleInputFirst" placeholder="First name">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputLast">Last name<span style="color:red;">*</span></label>
+            <input type="text" class="form-control" id="exampleInputLast" placeholder="Last name">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address <span style="color:red;">*</span></label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword">Password<span style="color:red;">*</span></label>
+            <input type="text" class="form-control" id="exampleInputPassword" placeholder="Enter password">
+            <div class="form-group">
+              <label for="exampleInputPasswordAgain">Re-enter Password<span style="color:red;">*</span></label>
+              <input type="text" class="form-control" id="exampleInputPasswordAgain" placeholder="Re-enter password"><br>
+          <div class="form-group">
+            <span class="text-muted"><em><span style="color:red;">*</span> Indicates required field</em></span><br>
+          </div>
+          <button type="submit" class="btn btn-default">Sign up</button>
+        </form>
+            </div>
+            </div>
+          </div>
+        </div></p>
+  </div>
+</style>
