@@ -14,17 +14,18 @@ window.onload = init;
 
 function checkPassword() {
   var password = document.getElementById("exampleInputPassword").value; //instead of ElementbyID => elementsbyclassname
-
   var isSecure = true;
   for (word=0; word <=wordsList.length; word++) {
     if (password==wordsList[word]) {
-        document.getElementById('results').innerHTML = "This is a weak password!";
+      console.log("your password is weak");
       isSecure = false;
-      console.log("Your password is weak");
+      alert("This password is not strong enough. Use at least one uppercase letter and a symbol for the strongest possible password!");
+   
     }
   }
-  if (isSecure == true) {
-    console.log("Your password is strong");
-    document.getElementById('results').innerHTML = "This is a strong password!";
+    if (isSecure == true) {
+      console.log("Your password is strong");
+      alert("Your password is strong. You're good to go!");
+      
   }
 }
