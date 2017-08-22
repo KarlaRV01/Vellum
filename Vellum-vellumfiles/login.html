@@ -1,34 +1,5 @@
 <body>
   <link rel="stylesheet" type="text/css" href="styles.css">
-
-    <!-- <div class="md-toolbar-tools">
-      <h2><span>Login Form</span></h2>
-    </div>
-  </md-toolbar>
-  <md-card-content>
-    <form name="Form">
-      <md-input-container class="md-block">
-        <div ng-messages="Form.email.$error" role="alert" multiple="">
-          <div ng-message="required" class="my-message">Please enter your email below:</div>
-        </div>
-        <label>Login<span style="color:red;">*</span></label>
-        <input type="text" name="email" ng-model="vm.formData.email" placeholder="email" required=""/>
-      </md-input-container>
-      <md-input-container class="md-block">
-        <div ng-messages="Form.password.$error" role="alert" multiple="">
-          <div ng-message="required" class="my-message">Please enter your password below:</div>
-        </div>
-        <label>Password<span style="color:red;">*</span></label>
-        <input type="password" name="password" ng-model="vm.formData.password" placeholder="password" required="" md-maxlength="16"/>
-      </md-input-container>
-      <div class="form-group">
-        <span class="text-muted"><em><span style="color:red;">*</span> Indicates required field</em></span><br>
-      </div>
-      <form>
-        <input type="button" value="Login"
-        onclick=""/>
-      </form>
-    </form> -->
 </body>
 
 
@@ -47,12 +18,21 @@
     margin: 3%;
     font-weight: bold;
   }
+  .button {
+      font: bold 11px Arial;
+      text-decoration: none;
+      background-color: #EEEEEE;
+      color: #333333;
+      padding: 2px 6px 2px 6px;
+      border-top: 1px solid #CCCCCC;
+      border-right: 1px solid #333333;
+      border-bottom: 1px solid #333333;
+      border-left: 1px solid #CCCCCC;
+    }
   </style>
   </head>
   <body>
-    <!-- <div class="logo">
-      <img src="assets/logocopy2.jpg" style= float:"left"; width:"25"; height:"10";></img>
-    </div> -->
+
   <div class="background">
     <div class="transbox">
       <p>
@@ -81,8 +61,7 @@
               <span class="text-muted"><em><span style="color:red;">*</span> Indicates required field</em></span><br>
             </div>
             <form>
-              <input type="button" value="Login"
-              onclick=""/>
+              <a href="survey.html" class="button">Login</a>
             </form>
           </form></p>
         <div class="w3-display-middle">
