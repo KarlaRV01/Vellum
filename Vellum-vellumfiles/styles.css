@@ -1,5 +1,6 @@
 body {
-    background-color: #FADAD8;
+    background: -webkit-linear-gradient(to right, #ffc3a0, #FFAFBD);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-family: Courier;
     color: #9B8281;
   }
@@ -7,13 +8,13 @@ body {
 h1 {
     font size: 900%;
     text-align: center;
-  }
+    }
 p {
     font size: 500%;
     text-align: center;
     margin-left: 20%;
     margin-right: 20%;
-  }
+    }
 h4 {
   font-size: 150%;
-}
+  }
