@@ -1,0 +1,5 @@
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
+
+https://www.blockspring.com/blog/google-spreadsheet-as-database
+
+https://open.blockspring.com/blocks/new?clone=magic-the-gathering-card-api
