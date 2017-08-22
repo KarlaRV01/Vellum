@@ -1,17 +1,28 @@
 body {
-    background-color: #C499AC;
+    background-color: #FADAD8;
     font-family: Courier;
+    text-align: center;
   }
 
 .booksummary {
-  color: white;
+  color: #9B8281;
   text-align: center;
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 125%;
 }
 
 .title {
+  color: #534847;
   text-align: center;
 }
 
 h1 {
   text-align: center;
+  color: #534847;
+}
+
+p {
+  color:#534847;
+  font-size: 125%;
 }
