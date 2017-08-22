@@ -1,13 +1,12 @@
 body {
-    background-color: #C499AC;
+    background-color: #FADAD8;
     font-family: Courier;
-    color: #ae3737;
+    color: #9B8281;
   }
 
 h1 {
     font size: 900%;
     text-align: center;
-    /*margin-top: 15%;*/
   }
 p {
     font size: 500%;
