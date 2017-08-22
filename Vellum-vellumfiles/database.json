@@ -1,0 +1,100 @@
+ {
+  "books" : [
+    {
+      "name" : "Pride and Prejudice",
+      "author": "Jane Austen",
+      "genre" : "Romance",
+      "length" : "medium",
+    },
+    {
+      "name" : "Fifty Shades",
+      "author": "E.L. James",
+      "genre" : "Romance",
+      "length" : "medium",
+    },
+    {
+      "name" : "The Notebook",
+      "author": "Nicholas Sparks",
+      "genre" : "Romance",
+      "length" : "short",
+    },
+    {
+      "name" : "Jane Eyre",
+      "author": "Charlotte Bronte",
+      "genre" : "Romance",
+      "length" : "medium",
+    }
+    {
+      "name" : "Ender's Game",
+      "author": "Orson Scott Card",
+      "genre" : "Sci-Fi/Fantasy",
+      "length" : "short",
+    }
+    {
+      "name" : "Game of Thrones",
+      "author": "George R.R. Martin",
+      "genre" : "Sci-Fi/Fantasy",
+      "length" : "short",
+    }
+    {
+      "name" : "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "genre" : "Sci-Fi/Fantasy",
+      "length" : "short",
+    }
+    {
+      "name" : "Outlander",
+      "author": "Diana Gabaldon",
+      "genre" : "Sci-Fi/Fantasy",
+      "length" : "long",
+    }
+    {
+      "name" : "The Immortal Life of Henrietta Lacks",
+      "author": "Rebecca Skloot",
+      "genre" : "Non-Fiction",
+      "length" : "short",
+    }
+    {
+      "name" : "Tuesdays with Morrie by Mitch Albom",
+      "author": "Mitch Albom",
+      "genre" : "Non-Fiction",
+      "length" : "short",
+    }
+    {
+      "name" : "Blink",
+      "author": "Malcolm",
+      "genre" : "Non-Fiction",
+      "length" : "short",
+    }
+    {
+      "name" : "Fast Food Nation: The Dark Side of the All American Meal",
+      "author": "Eric Schlosser",
+      "genre" : "Non-Fiction",
+      "length" : "short",
+    }
+    {
+      "name" : "The Girl with the Dragon Tattoo",
+      "author": "Steig Larsson",
+      "genre" : "Action/Thriller",
+      "length" : "medium",
+    }
+    {
+      "name" : "The Girl on the Train",
+      "author": "Paula Hawkins",
+      "genre" : "Action/Thriller",
+      "length" : "short",
+    }
+    {
+      "name" : "Murder on the Orient Express",
+      "author": "Agatha Christie",
+      "genre" : "Action/Thriller",
+      "length" : "short",
+    }
+    {
+      "name" : "The Da Vinci Code",
+      "author": "Dan Brown",
+      "genre" : "Action/Thriller",
+      "length" : "medium",
+    }
+  ]
+}
