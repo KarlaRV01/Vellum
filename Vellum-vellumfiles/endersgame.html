@@ -2,7 +2,51 @@
 <html>
 <head>
   <title>Vellum Books/Ender's Game</title>
-  <link rel="stylesheet" type="text/css" href="styles2.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false&language=en"> </script>
+    <script type="text/javascript">
+        var bookstoreList = [
+                ['Kinokuniya New York', 40.754043, -73.984970, 1],
+                ['Book Culture on Columbus', 40.783775, -73.974537, 2]
+            ],
+            demoCenter = new google.maps.LatLng(40.77,-73.98),
+                //lower the lat., the more it goes down, the lower the long, the more right it goes
+            map;
+            function initialize()
+            {
+                map = new google.maps.Map(document.getElementById('map_canvas'), {
+                   zoom: 13,
+                   center: demoCenter,
+                   mapTypeId: google.maps.MapTypeId.ROADMAP
+                 });
+            }
+            function addMarkers()
+            {
+                var marker,
+                i,
+                infowindow = new google.maps.InfoWindow();
+                for (i = 0; i < bookstoreList.length; i++)
+                {
+                    marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(bookstoreList[i][1], bookstoreList[i][2]),
+                        map: map,
+                        title: bookstoreList[i][0]
+                    });
+                    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                        return function() {
+                            infowindow.setContent(bookstoreList[i][0]);
+                            infowindow.open(map, marker);
+                        }
+                    })(marker, i));
+                }
+            }
+            $(document).ready(function() {
+                initialize();
+                addMarkers();
+            });
+          </script>
 </head>
 
 <body>
@@ -11,6 +55,11 @@
   </div>
   <div id="text">
     <h1 id="title">Ender's Game by: Orson Scott Card</h1><br>
-    <p id="booksummary">Andrew "Ender" Wiggin thinks he is playing computer simulated war games; he is, in fact, engaged in something far more desperate. The result of genetic experimentation, Ender may be the military genius Earth desperately needs in a war against an alien enemy seeking to destroy all human life. The only way to find out is to throw Ender into ever harsher training, to chip away and find the diamond inside, or destroy him utterly. Ender Wiggin is six years old when it begins. He will grow up fast.<br><br> But Ender is not the only result of the experiment. The war with the Buggers has been raging for a hundred years, and the quest for the perfect general has been underway almost as long. Ender's two older siblings, Peter and Valentine, are every bit as unusual as he is, but in very different ways. While Peter was too uncontrollably violent, Valentine very nearly lacks the capability for violence altogether. Neither was found suitable for the military's purpose. But they are driven by their jealousy of Ender, and by their inbred drive for power. Peter seeks to control the political process, to become a ruler. Valentine's abilities turn more toward the subtle control of the beliefs of commoner and elite alike, through powerfully convincing essays. Hiding their youth and identities behind the anonymity of the computer networks, these two begin working together to shape the destiny of Earth-an Earth that has no future at all if their brother Ender fails. <br><br> ~from author's web site </p>
+    <p id="summary">Andrew "Ender" Wiggin thinks he is playing computer simulated war games; he is, in fact, engaged in something far more desperate. The result of genetic experimentation, Ender may be the military genius Earth desperately needs in a war against an alien enemy seeking to destroy all human life. The only way to find out is to throw Ender into ever harsher training, to chip away and find the diamond inside, or destroy him utterly. Ender Wiggin is six years old when it begins. He will grow up fast.</p><br>
+    <p id="summary">But Ender is not the only result of the experiment. The war with the Buggers has been raging for a hundred years, and the quest for the perfect general has been underway almost as long. Ender's two older siblings, Peter and Valentine, are every bit as unusual as he is, but in very different ways. While Peter was too uncontrollably violent, Valentine very nearly lacks the capability for violence altogether. Neither was found suitable for the military's purpose. But they are driven by their jealousy of Ender, and by their inbred drive for power. Peter seeks to control the political process, to become a ruler. Valentine's abilities turn more toward the subtle control of the beliefs of commoner and elite alike, through powerfully convincing essays. Hiding their youth and identities behind the anonymity of the computer networks, these two begin working together to shape the destiny of Earth-an Earth that has no future at all if their brother Ender fails.</p>
+    <p id="credit">~from author's web site</p>
   </div>
+  <div id="basic-map">
+     <div id="map_canvas" style="height:350px;"></div>
+     </div>
 </body>
