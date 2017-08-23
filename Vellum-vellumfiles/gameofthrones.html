@@ -2,7 +2,55 @@
 <html>
 <head>
   <title>Vellum Books/The Game of Thrones</title>
-  <link rel="stylesheet" type="text/css" href="styles2.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false&language=en"> </script>
+    <script type="text/javascript">
+        var bookstoreList = [
+                ['Book Culture on Broadway', 40.754043, -73.984970, 1],
+                ['Book Culture at Broadway', 40.806711, -73.965263, 2],
+            ],
+            demoCenter = new google.maps.LatLng(40.778,-73.98),
+                //lower the lat., the more it goes down, the lower the long, the more right it goes
+            map;
+            function initialize()
+            {
+                map = new google.maps.Map(document.getElementById('map_canvas'), {
+                   zoom: 12,
+                   center: demoCenter,
+                   mapTypeId: google.maps.MapTypeId.ROADMAP
+                 });
+            }
+
+            function addMarkers()
+            {
+                var marker,
+                i,
+                infowindow = new google.maps.InfoWindow();
+
+                for (i = 0; i < bookstoreList.length; i++)
+                {
+                    marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(bookstoreList[i][1], bookstoreList[i][2]),
+                        map: map,
+                        title: bookstoreList[i][0]
+                    });
+
+                    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                        return function() {
+                            infowindow.setContent(bookstoreList[i][0]);
+                            infowindow.open(map, marker);
+                        }
+                    })(marker, i));
+                }
+            }
+
+            $(document).ready(function() {
+                initialize();
+                addMarkers();
+            });
+
+        </script>
 </head>
 
 <body>
@@ -13,4 +61,9 @@
     <h1 id="title">The Game of Thrones by: George R.R. Martin</h1><br>
     <p id="booksummary">Summers span decades. Winter can last a lifetime. And the struggle for the Iron Throne has begun. As Warden of the north, Lord Eddard Stark counts it a curse when King Robert bestows on him the office of the Hand. His honour weighs him down at court where a true man does what he will, not what he must … and a dead enemy is a thing of beauty. The old gods have no power in the south, Stark’s family is split and there is treachery at court. Worse, the vengeance-mad heir of the deposed Dragon King has grown to maturity in exile in the Free Cities. He claims the Iron Throne.<br>~from author's web site</p>
   </div>
+  <div id="basic-map">
+    <div id="map_canvas" style="height:350px;"></div>
+  </div>
 </body>
+</html>
+
