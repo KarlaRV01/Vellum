@@ -1,6 +1,56 @@
 <html>
  <head>
-   <link rel="stylesheet" type="text/css" href="styles2.css">
+   <link rel="stylesheet" type="text/css" href="styles.css">
+   <title>Google Maps</title>
+   <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+   <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false&language=en"> </script>
+   <script type="text/javascript">
+
+       var bookstoreList = [
+               ['Strand Bookstore', 40.733071, -73.990784, 1],
+               ['Hudson Booksellers', 40.756936, -73.990475, 2]
+           ],
+           demoCenter = new google.maps.LatLng(40.75,-73.99),
+           map;
+           function initialize()
+           {
+               map = new google.maps.Map(document.getElementById('map_canvas'), {
+                  zoom: 13,
+                  center: demoCenter,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                });
+           }
+
+           function addMarkers()
+           {
+               var marker,
+               i,
+               infowindow = new google.maps.InfoWindow();
+
+               for (i = 0; i < bookstoreList.length; i++)
+               {
+                   marker = new google.maps.Marker({
+                       position: new google.maps.LatLng(bookstoreList[i][1], bookstoreList[i][2]),
+                       map: map,
+                       title: bookstoreList[i][0]
+                   });
+
+                   google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                       return function() {
+                           infowindow.setContent(bookstoreList[i][0]);
+                           infowindow.open(map, marker);
+                       }
+                   })(marker, i));
+               }
+           }
+
+           $(document).ready(function() {
+               initialize();
+               addMarkers();
+           });
+
+       </script>
+
  </head>
 
 
@@ -15,7 +65,10 @@
  <p id="booksummary"> She is one of those tiny bird-women, a beauty, pale-skinned with
     blond hair cropped short." Rachel, the main narrator of Paula Hawkins' novel The Girl on the Train, is obsessed with the pair; they represent to her the perfect relationship that she once had, or seemed to, before it imploded
     spectacularly.</p>
-
+    <div id="basic-map">
+        <div id="map_canvas" style="height:350px;"></div>
+    </div>
 
 </body>
 </html>
+
