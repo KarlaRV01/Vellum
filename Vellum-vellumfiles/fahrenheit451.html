@@ -2,7 +2,54 @@
 <html>
 <head>
   <title>Vellum Books/Fahrenheit 451</title>
-  <link rel="stylesheet" type="text/css" href="styles2.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false&language=en"> </script>
+  <script type="text/javascript">
+
+      var bookstoreList = [
+              ['Strand Bookstore', 40.733071, -73.990784, 1],
+              ['Kinokuniya New York', 40.754043, -73.984970, 2],
+          ],
+          demoCenter = new google.maps.LatLng(40.742,-73.99),
+          map;
+          function initialize()
+          {
+              map = new google.maps.Map(document.getElementById('map_canvas'), {
+                 zoom: 13,
+                 center: demoCenter,
+                 mapTypeId: google.maps.MapTypeId.ROADMAP
+               });
+          }
+
+          function addMarkers()
+          {
+              var marker,
+              i,
+              infowindow = new google.maps.InfoWindow();
+
+              for (i = 0; i < bookstoreList.length; i++)
+              {
+                  marker = new google.maps.Marker({
+                      position: new google.maps.LatLng(bookstoreList[i][1], bookstoreList[i][2]),
+                      map: map,
+                      title: bookstoreList[i][0]
+                  });
+
+                  google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                      return function() {
+                          infowindow.setContent(bookstoreList[i][0]);
+                          infowindow.open(map, marker);
+                      }
+                  })(marker, i));
+              }
+          }
+
+          $(document).ready(function() {
+              initialize();
+              addMarkers();
+          });
+        </script>
 </head>
 
 <body>
@@ -12,5 +59,8 @@
   <div id="text">
     <h1 id="title">Fahrenheit 451 by: Ray Bradbury </h1><br>
     <p id="booksummary">Guy Montag is a fireman. In his world, where television rules and literature is on the brink of extinction, firemen start fires rather than put them out. His job is to destroy the most illegal of commodities, the printed book, along with the houses in which they are hidden. Montag never questions the destruction and ruin his actions produce, returning each day to his bland life and wife, Mildred, who spends all day with her television “family.” <br><br>But then he meets an eccentric young neighbor, Clarisse, who introduces him to a past where people didn’t live in fear and to a present where one sees the world through the ideas in books instead of the mindless chatter of television. When Mildred attempts suicide and Clarisse suddenly disappears, Montag begins to question everything he has ever known. He starts hiding books in his home, and when his pilfering is discovered, the fireman has to run for his life.<br><br>~from author's web site</p>
+  </div>
+  <div id="basic-map">
+    <div id="map_canvas" style="height:350px;"></div>
   </div>
 </body>
