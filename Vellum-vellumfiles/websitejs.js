@@ -20,12 +20,35 @@ function checkPassword() {
       console.log("your password is weak");
       isSecure = false;
       alert("This password is not strong enough. Use at least one uppercase letter and a symbol for the strongest possible password!");
-   
+
     }
   }
     if (isSecure == true) {
       console.log("Your password is strong");
       alert("Your password is strong. You're good to go!");
-      
+
   }
+}
+
+
+function onsubmitbutton() {
+  var first = document.getElementById("fname").value;
+  alert(first);
+
+  var last = document.getElementById("lname").value;
+  alert(last);
+
+  var genres = document.getElementById("genre").value;
+  alert(genres);
+
+  var importance = document.getElementById("important").value;
+  alert(importance);
+
+  var size = document.getElementById("length").value;
+  alert(size);
+
+  var colors = document.getElementById("color").value;
+  alert(colors);
+
+
 }
