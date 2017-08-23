@@ -33,22 +33,41 @@ function checkPassword() {
 
 function onsubmitbutton() {
   var first = document.getElementById("fname").value;
-  alert(first);
+  //alert(first);
 
   var last = document.getElementById("lname").value;
-  alert(last);
+  //alert(last);
 
   var genres = document.getElementById("genre").value;
-  alert(genres);
+  //alert(genres);
 
   var importance = document.getElementById("important").value;
-  alert(importance);
+  //alert(importance);
 
   var size = document.getElementById("length").value;
-  alert(size);
+  //alert(size);
 
   var colors = document.getElementById("color").value;
-  alert(colors);
+  //alert(colors);
 
+  var requestURL = 'https://raw.githubusercontent.com/KarlaRV01/Vellum/gh-pages/Vellum-vellumfiles/database.json';
+  var request = new XMLHttpRequest();
+//request.open
+  request.open("GET", requestURL, true);
+  request.responseType = 'text';
+  request.send();
+  // var books = request.response;
+  // alert(books);
+  request.addEventListener("readystatechange", processRequest, false);
+  request.onload = function() {
+    var books = request.response;
+    alert(books);
+    // printBook(books);
+  }
 
+  function printBook(jsonObj){
+    var books = jsonObj["books"];
+    console.log(books[0]);
+  }
 }
+
