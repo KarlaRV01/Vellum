@@ -51,7 +51,144 @@ function onsubmitbutton() {
   //alert(colors);
 
   var requestURL = 'https://raw.githubusercontent.com/KarlaRV01/Vellum/gh-pages/Vellum-vellumfiles/database.json';
-  var request = new XMLHttpRequest();
+  var requesfunction onsubmitbutton() {
+  var first = document.getElementById("fname").value;
+  //alert(first);
+
+  var last = document.getElementById("lname").value;
+  //alert(last);
+
+  var genres = document.getElementById("genre").value;
+  //alert(genres);
+
+  var importance = document.getElementById("important").value;
+  //alert(importance);
+
+  var size = document.getElementById("length").value;
+  //alert(size);
+
+  var colors = document.getElementById("color").value;
+  //alert(colors);
+
+  var data = {
+    "books" : [
+      {
+        "name" : "Pride and Prejudice",
+        "author": "Jane Austen",
+        "genre" : "Romance",
+        "color": "red",
+        "length" : "medium",
+
+      },
+      {
+        "name" : "Fifty Shades of Grey",
+        "author": "E.L. James",
+        "genre" : "Romance",
+        "color": "red",
+        "length" : "medium",
+      },
+      {
+        "name" : "The Notebook",
+        "author": "Nicholas Sparks",
+        "genre" : "Romance",
+        "color": "red",
+        "length" : "short",
+      },
+      {
+        "name" : "Jane Eyre",
+        "author": "Charlotte Bronte",
+        "genre" : "Romance",
+        "color": "red",
+        "length" : "medium",
+      },
+      {
+        "name" : "Ender's Game",
+        "author": "Orson Scott Card",
+        "genre" : "Sci-Fi/Fantasy",
+        "color": "blue",
+        "length" : "short",
+      },
+      {
+        "name" : "Game of Thrones",
+        "author": "George R.R. Martin",
+        "genre" : "Sci-Fi/Fantasy",
+        "color": "blue",
+        "length" : "short",
+      },
+      {
+        "name" : "Fahrenheit 451",
+        "author": "Ray Bradbury",
+        "genre" : "Sci-Fi/Fantasy",
+        "color": "blue",
+        "length" : "short",
+      },
+      {
+        "name" : "Outlander",
+        "author": "Diana Gabaldon",
+        "genre" : "Sci-Fi/Fantasy",
+        "color": "blue",
+        "length" : "long",
+      },
+      {
+        "name" : "The Immortal Life of Henrietta Lacks",
+        "author": "Rebecca Skloot",
+        "genre" : "Non-Fiction",
+        "color": "orange",
+        "length" : "short",
+      },
+      {
+        "name" : "Tuesdays with Morrie by Mitch Albom",
+        "author": "Mitch Albom",
+        "genre" : "Non-Fiction",
+        "color": "orange",
+        "length" : "short",
+      },
+      {
+        "name" : "Blink",
+        "author": "Malcolm",
+        "genre" : "Non-Fiction",
+        "color": "orange",
+        "length" : "short",
+      },
+      {
+        "name" : "Fast Food Nation: The Dark Side of the All American Meal",
+        "author": "Eric Schlosser",
+        "genre" : "Non-Fiction",
+        "color": "orange",
+        "length" : "short",
+      },
+      {
+        "name" : "The Girl with the Dragon Tattoo",
+        "author": "Steig Larsson",
+        "genre" : "Action/Thriller",
+        "color": "black",
+        "length" : "medium",
+      },
+      {
+        "name" : "The Girl on the Train",
+        "author": "Paula Hawkins",
+        "genre" : "Action/Thriller",
+        "color": "black",
+        "length" : "short",
+      },
+      {
+        "name" : "Murder on the Orient Express",
+        "author": "Agatha Christie",
+        "genre" : "Action/Thriller",
+        "color": "black",
+        "length" : "short",
+      },
+      {
+        "name" : "The Da Vinci Code",
+        "author": "Dan Brown",
+        "genre" : "Action/Thriller",
+        "color": "black",
+        "length" : "medium",
+      }
+    ]
+  };
+  console.log(data["books"])
+}t = new XMLHttpRequest();
 //request.open
   request.open("GET", requestURL, true);
   request.responseType = 'text';
