@@ -7,10 +7,10 @@
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false&language=en"> </script>
     <script type="text/javascript">
         var bookstoreList = [
-                ['Book Culture on Broadway', 40.754043, -73.984970, 1],
-                ['Book Culture at Broadway', 40.806711, -73.965263, 2],
+                ['Book Culture on Broadway', 40.806722, -73.965193, 1],
+                ['Hudson Booksellers', 40.756936, -73.990475, 2],
             ],
-            demoCenter = new google.maps.LatLng(40.778,-73.98),
+            demoCenter = new google.maps.LatLng(40.78,-73.98),
                 //lower the lat., the more it goes down, the lower the long, the more right it goes
             map;
             function initialize()
@@ -21,13 +21,11 @@
                    mapTypeId: google.maps.MapTypeId.ROADMAP
                  });
             }
-
             function addMarkers()
             {
                 var marker,
                 i,
                 infowindow = new google.maps.InfoWindow();
-
                 for (i = 0; i < bookstoreList.length; i++)
                 {
                     marker = new google.maps.Marker({
@@ -35,7 +33,6 @@
                         map: map,
                         title: bookstoreList[i][0]
                     });
-
                     google.maps.event.addListener(marker, 'click', (function(marker, i) {
                         return function() {
                             infowindow.setContent(bookstoreList[i][0]);
@@ -44,12 +41,10 @@
                     })(marker, i));
                 }
             }
-
             $(document).ready(function() {
                 initialize();
                 addMarkers();
             });
-
         </script>
 </head>
 
